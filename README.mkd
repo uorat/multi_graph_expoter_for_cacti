@@ -1,0 +1,62 @@
+Multi Graph Expoter for Cacti
+============================================================
+
+Summary
+------------------------------------------------------------
+
+You can get CSV raw data of the graph you specify, but can't all graphs of the server using the Cacti graph expoter function.
+This script gets all of graphs of the server that you specify, using Cacti graph expoter function.
+
+Requirement
+------------------------------------------------------------
+
+* Cacti Version 0.8.8b
+* casperjs 1.x (1.1.0-beta3)
+* phantomjs 1.9.x (1.9.8)
+    * not 2.x, because casperjs is unsupported.
+
+Usage
+------------------------------------------------------------
+
+### config
+
+Set './config.json'.
+
+```json
+{
+  "server": "http://hostname/cacti/",
+  "user": "username",
+  "password": "password"
+}
+```
+
+### command
+
+```
+casperjs cacti_graph_expoter.js --hostname=TARGET
+# casperjs cacti_graph_expoter.js --hostname=TARGET --stime=START_TIME --period=PERIOD_SECOND
+```
+
+### option
+
+* --hostname
+    * specify hostname you want to get graphs
+* --stime **(unsuported)**
+    * specify start time (YYYY/MM/DD HH:mm:ss)
+* --period **(unsupported)**
+    * specify period (sec)
+
+### Caution
+
+--stime and --period cannot be used bacause of the bug of Cacti.
+
+Install
+------------------------------------------------------------
+
+### for Mac
+
+Use homebrew and nodebrew,
+
+1. brew install nodebrew
+1. npm install casperjs phantomjs
+

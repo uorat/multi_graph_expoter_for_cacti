@@ -1,0 +1,5 @@
+{
+  "server": "http://127.0.0.1/cacti/",
+  "user": "admin",
+  "password": "password"
+}
